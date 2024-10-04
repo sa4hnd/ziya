@@ -10,6 +10,19 @@ const nextConfig = {
       "logos-world.net",
     ],
   },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-src 'self' https://www.youtube.com",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
