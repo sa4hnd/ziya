@@ -28,8 +28,7 @@ export default function Home() {
               className="rounded-lg shadow-xl"
             />
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl font-bold">ئەز
-زیاد نوزاد نجم الدین !</h1>
+              <h1 className="text-4xl font-bold">! ئەز ابو جيجو - دةيكا مشتاقي </h1>
               <h2 className="text-2xl mt-2">ماموستایێ کیمیایێ</h2>
               <p className="mt-4">ب ئەزموونا چەند ساڵێن وانە گوتنێ و پێشینەیەکا ب هێز د بوارێ کیمیایێدا، من یا خۆ تەرخانکری ژ بۆ هاریکارییا قوتابیێن خوشتڤی</p>
               <div className="flex justify-center lg:justify-start space-x-4 mt-4">
