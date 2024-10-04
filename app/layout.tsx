@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { IBM_Plex_Sans_Arabic } from 'next/font/google'
 import './globals.css'
+import React from 'react'
 
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   weight: ['400', '600', '700'],
