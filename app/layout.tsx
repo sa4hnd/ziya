@@ -1,37 +1,37 @@
-import { ReactNode } from "react";
-import { Inter } from "next/font/google";
-import { Viewport } from "next";
-import PlausibleProvider from "next-plausible";
-import { getSEOTags } from "@/libs/seo";
-import ClientLayout from "@/components/LayoutClient";
-import config from "@/config";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { IBM_Plex_Sans_Arabic } from 'next/font/google'
+import './globals.css'
 
-const font = Inter({ subsets: ["latin"] });
+const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
+  weight: ['400', '600', '700'],
+  subsets: ['arabic'],
+})
 
-export const viewport: Viewport = {
-  // Will use the primary color of your theme to show a nice theme color in the URL bar of supported browsers
-  themeColor: config.colors.main,
-  width: "device-width",
-  initialScale: 1,
-};
+export const metadata: Metadata = {
+  title: 'ماموستایێ کیمیایێ',
+  description: 'کۆرسێ کیمیایێ بۆ قوتابیێن پولا 12',
+  openGraph: {
+    title: 'ماموستایێ کیمیایێ',
+    description: 'کۆرسێ کیمیایێ بۆ قوتابیێن پولا 12',
+    images: [
+      {
+        url: '/teacher-portrait.png',
+        width: 1200,
+        height: 630,
+        alt: 'ماموستایێ کیمیایێ',
+      },
+    ],
+  },
+}
 
-// This adds default SEO tags to all pages in our app.
-// You can override them in each page passing params to getSOTags() function.
-export const metadata = getSEOTags();
-
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" data-theme={config.colors.theme} className={font.className}>
-      {config.domainName && (
-        <head>
-          <PlausibleProvider domain={config.domainName} />
-        </head>
-      )}
-      <body>
-        {/* ClientLayout contains all the client wrappers (Crisp chat support, toast messages, tooltips, etc.) */}
-        <ClientLayout>{children}</ClientLayout>
-      </body>
+    <html lang="ku" dir="rtl">
+      <body className={ibmPlexSansArabic.className}>{children}</body>
     </html>
-  );
+  )
 }
